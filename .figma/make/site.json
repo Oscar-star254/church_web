@@ -1,0 +1,10 @@
+{
+  "description": "Engages youth and parents with a vibrant, mobile-friendly platform featuring events, resources, sign-ups, and community tools for church youth ministry.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

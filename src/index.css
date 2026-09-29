@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-sans: 'Nunito', sans-serif;
+
+  --color-primary: #6D28D9;
+  --color-primary-dark: #5B21B6;
+  --color-primary-light: #8B5CF6;
+  --color-accent: #F97316;
+  --color-accent-dark: #EA6A0A;
+  --color-amber: #FBBF24;
+  --color-emerald: #10B981;
+  --color-sky: #0EA5E9;
+
+  --color-surface: #FFFFFF;
+  --color-background: #F9F7FF;
+  --color-foreground: #1A1033;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+
+  --radius-card: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  background-color: #F9F7FF;
+  color: #1A1033;
+  font-family: var(--font-sans);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark body {
+  background-color: #0D0B1E;
+  color: #F1EDFF;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #6D28D920; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #6D28D940; }
+
+/* dark-mode surface tokens – utility classes used throughout */
+.dark .bg-surface { background-color: #1A1535 !important; }
+.dark .bg-bg { background-color: #0D0B1E !important; }
+.dark .border-subtle { border-color: #2D2850 !important; }
+.dark .text-fg { color: #F1EDFF !important; }
+.dark .text-muted { color: #9CA3AF !important; }
+
+/* animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #F97316;
+  transition: width 0.2s;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* geometric decorative shapes */
+.geo-circle {
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+}
